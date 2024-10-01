@@ -8,39 +8,20 @@ import CV from '../assets/Hady Safa - Computer Engineering Student.pdf'
 function LandingPage() {
 
     const [viewImage,setViewImage] = useState(false)
-    const [width,setWidth] = useState()
-    const [height,setHeight] = useState()
-
-
-    const imageDelay = 1000;
+    const delay = 1000;
 
     useEffect( () => {
 
         const timeoutId = setTimeout( () => {
             setViewImage(true)
-        },imageDelay)
+        },delay)
 
         return () => clearTimeout(timeoutId)
         
     },[])
 
-    useEffect( () => {
-
-        function handlerFunction(e){
-            setWidth(window.innerWidth)
-            setHeight(window.innerHeight)
-        }
-
-        window.addEventListener("resize",handlerFunction)
-
-        return () => window.removeEventListener("resize",handlerFunction)
-        
-    },[])
-
     return (
         <section className={styles.page}>
-
-            <div className={styles.absolute}>{width} - {height}</div>
 
             <img src={Picture1} alt='Photo of me' className={`${styles.image} ${viewImage ? styles.visibleImage : styles.hiddenImage}`} />
 

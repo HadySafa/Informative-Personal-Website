@@ -157,10 +157,6 @@
 
 /*------------*/
 
-.absolute{
-    position: absolute;
-    top: 0;
-}
 
 
 /*Responsive Design*/
@@ -173,6 +169,7 @@
 
 }
 
+/*Mobile phones in landscape orientation*/
 @media (min-width: 600px) and (orientation: landscape){
 
     .image{
