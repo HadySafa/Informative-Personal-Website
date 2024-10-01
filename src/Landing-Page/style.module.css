@@ -173,6 +173,13 @@
 
 }
 
+@media (min-width: 600px) and (orientation: landscape){
+
+    .image{
+        max-width: 40%;
+    }
+
+}
 
 @media (min-width: 700px) {
 
@@ -213,7 +220,6 @@
         }
     }
    
-
 }
 
 
