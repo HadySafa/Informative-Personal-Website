@@ -1,22 +1,37 @@
+:root {
+    --navy: #001F3F;
+    --deepTeal: #00585C;
+    --softWhite: #FFFFFF;
+    --gap: 1rem;
+    --subsectionWidth: 80%;
+    --animationDuration: 2s;
+}
+
+/*Whole Page*/
 .page {
     min-height: 100vh;
     max-height: 100vh;
     width: 100vw;
-    background-color: #FFFFFF;
+    background-color: var(--softWhite);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     overflow-x: hidden;
-    padding: 1rem 0;
-    gap:1rem;
+    padding: var(--gap) 0;
+    gap: var(--gap);
 }
 
+/*------------*/
+
+
+/*My Image*/
 .image {
-    width: 80%;
+    width: var(--subsectionWidth);
     aspect-ratio: 1/1;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 128, 0.8);
+    object-fit: cover;
 }
 
 .hiddenImage {
@@ -24,11 +39,9 @@
 }
 
 .visibleImage {
-    /*Fade In Left Animation*/
     animation-name: fadeInLeft;
-    animation-duration: 3s;
+    animation-duration: var(--animationDuration);
 }
-
 
 @keyframes fadeInLeft {
     0% {
@@ -42,9 +55,12 @@
     }
 }
 
+/*------------*/
+
+/*Subsection*/
 .mainSection {
-    min-width: 80%;
-    max-width: 80%;
+    min-width: var(--subsectionWidth);
+    max-width: var(--subsectionWidth);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -56,9 +72,8 @@
 }
 
 .visibleSection {
-    /*Fade In Right Animation*/
     animation-name: fadeInRight;
-    animation-duration: 3s;
+    animation-duration: var(--animationDuration);
 }
 
 @keyframes fadeInRight {
@@ -73,24 +88,27 @@
     }
 }
 
+/*------------*/
+
+/*My Info Section*/
 .info {
     width: 100%;
-    color: #001F3F;
+    color: var(--navy);
     letter-spacing: 1px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap:1rem;
-    font-size: clamp(1rem,2vw,2rem);
+    gap: var(--gap);
+    font-size: clamp(1rem, 2vw, 2rem);
 }
 
 .name {
     font-weight: bolder;
-    animation: pulse 1.5s linear infinite;
-    animation-delay: 2s;
+    animation: textAnimation 1.5s linear infinite;
+    animation-delay: var(--animationDuration);
 }
 
-@keyframes pulse {
+@keyframes textAnimation {
 
     0%,
     100% {
@@ -100,29 +118,33 @@
     50% {
         transform: scale(1.1);
     }
+
 }
 
+/*------------*/
+
+/*Links Section - Buttons*/
 .buttons {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    width: 80%;
+    width: 100%;
     align-self: center;
 }
 
-.button {
+.button, .button:focus {
     width: 100%;
-    min-height: 5vh;
-    max-height: 5vh;
-    background-color: #00585C;
-    color: #FFFFFF;
-    border: none;
+    min-height: 2rem;
+    max-height: 2rem;
+    background-color:var(--softWhite);
+    color: var(--navy);
+    border: 2px solid var(--navy);
     border-radius: 2px;
     cursor: pointer;
     transition: background-color 0.5s ease, transform 0.5s ease;
     text-decoration: none;
     text-align: center;
-    line-height: 5vh;
+    line-height: 2rem;
 }
 
 .button:hover,
@@ -130,49 +152,46 @@
     background-color: #001F3F;
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 128, 0.8);
+    color: #FFFFFF;
+}
+
+/*------------*/
+
+.absolute{
+    position: absolute;
+    top: 0;
 }
 
 
+/*Responsive Design*/
 
-@media (min-width: 500px) {
+@media (min-width: 480px) {
 
-    .image {
-        width: 60%;
+    :root {
+        --subsectionWidth: 60%;
     }
 
 }
 
-@media (min-width: 800px) {
+
+@media (min-width: 700px) {
+
+    :root {
+        --subsectionWidth: 40%;
+    }
 
     .page {
         flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-evenly;
     }
-
+    
     .image {
-        width: 45%;
-        margin-left: 5%;
+        width: 50%;
     }
 
-    .mainSection {
-        min-width: 50%;
-        max-width: 50%;
-        gap: 2rem;
-    }
 
-    .info {
-        width: 80%;
-        text-align: start;
-        margin-left: 10%;
-        white-space: wrap;
-    }
-
-    .button{
-        font-size: 100%;
-    }
-
-    @keyframes pulse {
+    @keyframes textAnimation {
         0% {
             transform: translate(0);
         }
@@ -193,9 +212,28 @@
             transform: translate(0);
         }
     }
+   
 
-    .buttons {
-        gap:1rem;
+}
+
+
+@media (min-width: 1000px) {
+
+    :root {
+        --subsectionWidth: 40%;
+    }
+
+    .image {
+        width: 40%;
+    }
+
+    .mainSection{
+        gap: 2rem;
+    }   
+
+    .info {
+        text-align: start;
+        white-space: wrap;
     }
 
 }
