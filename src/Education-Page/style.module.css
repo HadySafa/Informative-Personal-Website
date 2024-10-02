@@ -1,0 +1,104 @@
+:root{
+    --accordionWidth: 90%;
+    --accordionHeight: 5rem;
+    --accordionGap: 2rem;
+    --accordionSectionsGap: 1rem;
+}
+
+.page{
+    min-height: 100vh;
+    min-width: 100vw;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: var(--color1);
+    color:var(--color5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--accordionGap);
+    cursor: default;
+    padding: 1rem 0;;
+}
+
+.accordion {
+    min-width: var(--accordionWidth);
+    max-width: var(--accordionWidth);
+    min-height: var(--accordionHeight);
+    border: 2px solid var(--color3);
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--color3);
+    transition: min-height 0.5s ease;
+}
+
+.header {
+    font-weight: bold;
+    font-size: clamp(1rem, 4vw, 3rem);
+    border-bottom: 2px solid var(--color5);
+    width: 80%;
+    padding-bottom: 1rem;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    margin-bottom: var(--accordionGap);
+}
+
+.description{
+    padding: var(--accordionSectionsGap);
+    text-align: justify;
+}
+
+
+.headerContainer{
+    display: flex;
+    align-items: center;
+    gap: calc(var(--accordionSectionsGap) / 2);
+    min-height: var(--accordionHeight);
+    max-height: var(--accordionHeight);
+    padding: calc(var(--accordionSectionsGap) / 2);
+}
+
+.logo{
+    max-height: calc(var(--accordionHeight) * 0.75);  
+    min-height: calc(var(--accordionHeight) * 0.75);  
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--accordionSectionsGap) / 2);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-height: var(--accordionHeight);
+    max-height: var(--accordionHeight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%; 
+}
+
+@media (min-width:480px){
+
+    
+}
+
+@media (min-width:700px){
+    
+    
+
+    :root{
+        --accordionWidth: 80%;    }
+}
+
+@media (min-width:1025px){
+    
+    :root{
+        --accordionWidth: 70%;    }
+}

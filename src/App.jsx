@@ -1,5 +1,6 @@
 import LandingPage from "./Landing-Page"
 import About from "./AboutMe-Page"
+import Education from "./Education-Page"
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <LandingPage />
       <About />
+      <Education />
     </>
   )
 

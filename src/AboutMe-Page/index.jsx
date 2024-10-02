@@ -27,7 +27,7 @@ function About() {
                 </div>
             </div>
 
-            <a href={CV} target='_blank' className={styles.button}><span className={styles.ping}></span>CV</a>
+            <a href={CV}  target='_blank' className={styles.button}><span className={styles.ping}></span>CV</a>
 
         </section>
     )
