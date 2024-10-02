@@ -1,0 +1,144 @@
+:root {
+    --color1: #0d1b2a;
+    --color2: #1b263b;
+    --color3: #415a77;
+    --color4: #778da9;
+    --color5: #e0e1dd;
+    --subsectionWidth: 80%;
+}
+
+.page {
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
+    background-color: var(--color1);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    cursor: default;
+}
+
+.title{
+    color: var(--color5);
+    font-weight: bold;
+    font-size: clamp(1rem, 4vw, 5rem);
+    border-bottom: 2px solid var(--color5);
+    width: var(--subsectionWidth);
+    text-align: center;
+    text-transform: capitalize;
+    padding-bottom: 1rem;
+    border-bottom:2px solid var(--color5);
+}
+
+
+.paragraph {
+    width: var(--subsectionWidth);
+    color: var(--softWhite);
+    text-align: justify;
+    font-size: clamp(1rem, 2vw, 2rem);
+    line-height: 1.5rem;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    padding: 0 1rem;
+}
+
+/* Location and Birthdate sections */
+.info {
+    width: var(--subsectionWidth);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.infoSubSections{
+    display: flex;
+    color:var(--color5);
+    gap:1rem;
+    line-height: 2rem;
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--color5);
+    text-align: center;
+    line-height: 2rem;
+}
+
+/*------*/
+
+/*Button*/
+.button, .button:focus {
+    width: var(--subsectionWidth);
+    min-height: 2rem;
+    max-height: 2rem;
+    background-color:var(--color1);
+    color: var(--color5);
+    border: 2px solid var(--color5);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    text-decoration: none;
+    text-align: center;
+    line-height: 2rem;
+    position: relative;
+}
+
+.button:hover,
+.button:active {
+    background-color: var(--color3);
+    transform: scale(1.05);
+    
+    border-color: var(--color1);
+    color: var(--color1);
+}
+
+.ping{
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--color3);
+    top:-0.5rem;
+    right:-0.5rem;
+    animation: ping 1s linear infinite;
+}
+
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/*------*/
+
+@media (min-width: 700px){
+    .button{
+        min-height: 2.5rem;
+        max-height: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+    :root {
+        --subsectionWidth: 70%;
+    }
+
+    .paragraph{
+        line-height: 2rem;
+    letter-spacing: 2.5px;
+    }
+}
+
+@media (min-width: 1000px){
+    :root {
+        --subsectionWidth: 60%;
+    }
+}

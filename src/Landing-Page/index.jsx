@@ -36,7 +36,6 @@ function LandingPage() {
                 <div className={styles.buttons}>
                     <a className={styles.button}>About Me</a>
                     <a className={styles.button}>Get In Touch</a>
-                    <a href={CV} target='_blank' className={styles.button}>CV</a>
                 </div>
 
             </div>
