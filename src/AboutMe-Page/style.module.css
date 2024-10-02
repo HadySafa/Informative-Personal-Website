@@ -4,13 +4,13 @@
     --color3: #415a77;
     --color4: #778da9;
     --color5: #e0e1dd;
-    --subsectionWidth: 80%;
+    --aboutSubsectionWidth: 80%;
+    --aboutGap: 2rem;
 }
 
 .page {
     min-height: 100vh;
-    max-height: 100vh;
-    width: 100vw;
+    min-width: 100vw;
     background-color: var(--color1);
     display: flex;
     flex-direction: column;
@@ -18,47 +18,48 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: var(--aboutGap);
     cursor: default;
+    padding: calc(var(--aboutGap) / 2) 0;
 }
 
-.title{
+.title {
     color: var(--color5);
     font-weight: bold;
-    font-size: clamp(1rem, 4vw, 5rem);
+    font-size: clamp(1rem, 4vw, 3rem);
     border-bottom: 2px solid var(--color5);
-    width: var(--subsectionWidth);
+    width: var(--aboutSubsectionWidth);
     text-align: center;
     text-transform: capitalize;
-    padding-bottom: 1rem;
-    border-bottom:2px solid var(--color5);
+    padding-bottom: calc(var(--aboutGap) / 2);
+    border-bottom: 2px solid var(--color5);
+    letter-spacing: 1.5px;
 }
 
 
 .paragraph {
-    width: var(--subsectionWidth);
-    color: var(--softWhite);
+    width: calc(var(--aboutSubsectionWidth) - 10%);
+    color: var(--color5);
     text-align: justify;
     font-size: clamp(1rem, 2vw, 2rem);
     line-height: 1.5rem;
     letter-spacing: 1.5px;
     text-transform: capitalize;
-    padding: 0 1rem;
 }
 
 /* Location and Birthdate sections */
 .info {
-    width: var(--subsectionWidth);
+    width: calc(var(--aboutSubsectionWidth) - 10%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: calc(var(--aboutGap) / 2);
 }
 
-.infoSubSections{
+.infoSubSections {
     display: flex;
-    color:var(--color5);
-    gap:1rem;
+    color: var(--color5);
+    gap: 1rem;
     line-height: 2rem;
 }
 
@@ -67,26 +68,29 @@
     height: 2rem;
     border-radius: 50%;
     border: 1px solid var(--color5);
-    text-align: center;
-    line-height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*------*/
 
 /*Button*/
-.button, .button:focus {
-    width: var(--subsectionWidth);
+.button,
+.button:focus {
+    width: calc(var(--aboutSubsectionWidth) - 10%);
     min-height: 2rem;
     max-height: 2rem;
-    background-color:var(--color1);
+    background-color: var(--color1);
     color: var(--color5);
     border: 2px solid var(--color5);
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.5s ease, transform 0.5s ease;
     text-decoration: none;
-    text-align: center;
-    line-height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
@@ -94,51 +98,75 @@
 .button:active {
     background-color: var(--color3);
     transform: scale(1.05);
-    
     border-color: var(--color1);
-    color: var(--color1);
 }
 
-.ping{
+.ping {
     position: absolute;
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
     background-color: var(--color3);
-    top:-0.5rem;
-    right:-0.5rem;
+    top: -0.5rem;
+    right: -0.5rem;
     animation: ping 1s linear infinite;
 }
 
 
 @keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
+
+    75%,
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+
 }
 
 /*------*/
-
-@media (min-width: 700px){
-    .button{
-        min-height: 2.5rem;
-        max-height: 2.5rem;
-        line-height: 2.5rem;
-    }
+@media (min-width: 400px) and (orientation: landscape) {
 
     :root {
-        --subsectionWidth: 70%;
+        --aboutGap: 1.5rem;
     }
 
-    .paragraph{
-        line-height: 2rem;
-    letter-spacing: 2.5px;
+    .info {
+        flex-direction: row;
+        justify-content: space-around;
     }
+
 }
 
-@media (min-width: 1000px){
-    :root {
-        --subsectionWidth: 60%;
+@media (min-width: 700px) {
+
+    .button {
+        min-height: 2.5rem;
+        max-height: 2.5rem;
     }
+
+    :root {
+        --aboutSubsectionWidth: 70%;
+        --aboutGap: 2rem;
+    }
+
+    .paragraph {
+        line-height: 2rem;
+        letter-spacing: 2.5px;
+    }
+
+
+}
+
+@media (min-width: 1025px) {
+
+    .button {
+        min-height: 3rem;
+        max-height: 3rem;
+    }
+
+    :root {
+        --aboutSubsectionWidth: 60%;
+        --aboutGap: 3rem;
+    }
+
 }

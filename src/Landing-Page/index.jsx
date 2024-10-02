@@ -2,7 +2,6 @@ import styles from './style.module.css'
 import Picture1 from '../assets/Picture1.png'
 import 'animate.css';
 import { useState, useEffect } from 'react';
-import CV from '../assets/Hady Safa - Computer Engineering Student.pdf'
 
 
 function LandingPage() {

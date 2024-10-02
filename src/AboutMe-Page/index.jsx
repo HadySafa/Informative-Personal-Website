@@ -1,5 +1,4 @@
 import styles from './style.module.css'
-import Picture2 from '../assets/Picture2.jpg'
 import { IoLocationSharp } from "react-icons/io5";
 import { FaCalendar } from "react-icons/fa";
 import CV from '../assets/Hady Safa - Computer Engineering Student.pdf'
