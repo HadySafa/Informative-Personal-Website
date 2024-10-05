@@ -3,6 +3,11 @@
     --accordionHeight: 5rem;
     --accordionGap: 2rem;
     --accordionSectionsGap: 1rem;
+    --color1: #0d1b2a;
+    --color2: #1b263b;
+    --color3: #415a77;
+    --color4: #778da9;
+    --color5: #e0e1dd;
 }
 
 .page {
