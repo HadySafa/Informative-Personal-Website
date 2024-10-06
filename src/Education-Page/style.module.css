@@ -10,6 +10,7 @@
     --color5: #e0e1dd;
 }
 
+/*Page*/
 .page {
     min-height: 100vh;
     min-width: 100vw;
@@ -25,6 +26,20 @@
     padding: 1rem 0;
 }
 
+/*Header*/
+.header {
+    font-weight: bold;
+    font-size: clamp(1rem, 4vw, 3rem);
+    border-bottom: 2px solid var(--color5);
+    width: 80%;
+    padding-bottom: 1rem;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    margin-bottom: var(--accordionGap);
+}
+
+/*Accordion styling*/
 .accordion {
     min-width: var(--accordionWidth);
     max-width: var(--accordionWidth);
@@ -41,18 +56,7 @@
     transform: scale(1.05);
 }
 
-.header {
-    font-weight: bold;
-    font-size: clamp(1rem, 4vw, 3rem);
-    border-bottom: 2px solid var(--color5);
-    width: 80%;
-    padding-bottom: 1rem;
-    text-align: center;
-    text-transform: capitalize;
-    letter-spacing: 1.5px;
-    margin-bottom: var(--accordionGap);
-}
-
+/*Description container*/
 .descriptionContainer{
     min-height: 0;
     max-height: 0;
@@ -63,19 +67,18 @@
     justify-content: center;
     align-items: center;
     min-width: 100%;
-    
     position: relative;
 }
 
+/*Description paragraph*/
 .description {
     text-align: justify; 
     min-width: 90%;  
     max-width: 90%;  
-    min-height: 90%;  
-    max-height: 90%;   
+    min-height: 100%;  
+    max-height: 100%;   
     position: absolute;
-    top: 5%;
-    left: 5%;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,7 +91,7 @@
 }
 
 
-
+/*Header Container*/
 .headerContainer {
     display: flex;
     align-items: center;
@@ -98,13 +101,7 @@
     padding: calc(var(--accordionSectionsGap) / 2);
 }
 
-.logo {
-    max-height: calc(var(--accordionHeight) * 0.75);
-    min-height: calc(var(--accordionHeight) * 0.75);
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-}
-
+/*Info container: Title + position*/
 .infoContainer {
     display: flex;
     flex-direction: column;
@@ -112,6 +109,16 @@
     font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
+/*Logo - Image*/
+.logo {
+    max-height: calc(var(--accordionHeight) * 0.75);
+    min-height: calc(var(--accordionHeight) * 0.75);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+
+/*Icon*/
 .icon {
     position: absolute;
     top: 0;
@@ -124,15 +131,14 @@
     width: 10%;
 }
 
-@media (min-width:480px) {}
 
+/*Responsive Desing*/
 @media (min-width:700px) {
-
-
 
     :root {
         --accordionWidth: 80%;
     }
+
 }
 
 @media (min-width:1025px) {
@@ -144,4 +150,5 @@
     .header {
         width: 60%;
     }
+
 }
