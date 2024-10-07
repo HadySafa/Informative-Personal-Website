@@ -13,7 +13,7 @@ function Projects() {
     const projectContainer = useRef()
 
     function handleNextProject() {
-        if (index < 2) {
+        if (index < infoArray.length - 1) {
             setIndex((i) => i + 1)
 
             projectContainer.current.scrollBy({
@@ -22,14 +22,7 @@ function Projects() {
                 behavior: 'smooth'
             });
         }
-        else{
-            projectContainer.current.scrollBy({
-                top: 0,
-                left: -projectContainer.current.clientWidth  * 3,
-                behavior: 'smooth'
-            });
-            setIndex(0)
-        }
+
     }
 
     function handlePreviousProject() {
@@ -38,22 +31,17 @@ function Projects() {
 
             projectContainer.current.scrollBy({
                 top: 0,
-                left: -projectContainer.current.clientWidth ,
+                left: -projectContainer.current.clientWidth,
                 behavior: 'smooth'
             });
         }
-        else{
-            projectContainer.current.scrollBy({
-                top: 0,
-                left: projectContainer.current.clientWidth  * 3,
-                behavior: 'smooth'
-            });
-            setIndex(2)
-        }
+
     }
 
     return (
         <section className={styles.page}>
+
+            <h2>Projects</h2>
 
             <div ref={projectContainer} className={styles.mainPageContentContainer}>
                 {
@@ -61,30 +49,23 @@ function Projects() {
 
                         <div key={index} className={styles.project}>
 
-                            <img className={styles.projectImage} src={project.image} alt={project.alt} />
+                            <h2>{project.title}</h2>
 
-                            <div className={styles.projectInfo}>
-
-                                <h2 className={styles.title}>{project.title}</h2>
-
-                                <p className={styles.description}>
-                                    {project.description}
-                                </p>
+                            <div className={styles.bodyContainer}>
+                                <div className={styles.descriptionContainer}>
+                                    <h4 className={styles.header}>Description</h4>
+                                    <p>{project.description}</p>
+                                </div>
 
                                 <div className={styles.technologiesContainer}>
-                                    <h4 className={styles.technologiesHeader}>Technologies Used</h4>
-                                    <ul className={styles.technologiesList}>
-                                        {
-                                            project.technologies.map((element, index) => <li key={index}>{element}</li>)
-                                        }
-                                    </ul>
+                                    <h4 className={styles.header}>Technologies Used</h4>
+                                    <p>{project.technologies.join(" / ")}</p>
                                 </div>
+                            </div>
 
-                                <div className={styles.buttons}>
-                                    <a target='_blank' href={project.link} className={styles.button}>View Website</a>
-                                    <a target='_blank' href={project.repo} className={styles.button}>Check Source Code</a>
-                                </div>
-
+                            <div className={styles.buttons}>
+                                <a target='_blank' href={project.link} className={styles.button}>View Website</a>
+                                <a target='_blank' href={project.repo} className={styles.button}>Check Source Code</a>
                             </div>
 
                         </div>

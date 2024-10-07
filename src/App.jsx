@@ -16,7 +16,10 @@ function App() {
 
   return (
     <>
+      <LandingPage />
+      <About />
       <Projects />
+      <Education />
     </>
   )
 

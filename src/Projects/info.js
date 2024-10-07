@@ -22,14 +22,5 @@ export const info = [
         technologies: ["ReactJS","Tailwind CSS","React Router Dom","Redux"],
         link: "https://master--trial-app.netlify.app/",
         repo: "https://github.com/HadySafa/SpotLight-store"
-    },
-    {
-        image: computerStore,
-        alt:'Computer Store Home Page',
-        title: "Computer Store",
-        description: 'A website designed to allow users to browse laptops, manage the cart and reach the store.',
-        technologies: ["HTML5","CSS","Vanilla JS"],
-        link: "https://master--computer-store-app.netlify.app/",
-        repo: "https://github.com/HadySafa/Computer-store"
     }
 ]
