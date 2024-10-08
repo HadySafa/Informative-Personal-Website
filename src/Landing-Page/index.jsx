@@ -4,7 +4,7 @@ import 'animate.css';
 import { useState, useEffect } from 'react';
 
 
-function LandingPage() {
+function LandingPage({setScrollIntoViewIndex}) {
 
     const [viewImage,setViewImage] = useState(false)
     const delay = 1000;
@@ -17,7 +17,11 @@ function LandingPage() {
 
         return () => clearTimeout(timeoutId)
         
-    },[])
+    },[]);
+
+    function handleClick(index){
+        setScrollIntoViewIndex(index)
+    }
 
     return (
         <section className={styles.page}>
@@ -33,8 +37,8 @@ function LandingPage() {
                 </div>
 
                 <div className={styles.buttons}>
-                    <a className={styles.button}>About Me</a>
-                    <a className={styles.button}>Get In Touch</a>
+                    <a onClick={() => handleClick(1) } className={styles.button}>About Me</a>
+                    <a onClick={() => handleClick(4)} className={styles.button}>Get In Touch</a>
                 </div>
 
             </div>

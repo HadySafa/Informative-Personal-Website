@@ -3,8 +3,11 @@ import { info } from './info.js'
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoIosArrowUp } from "react-icons/io";
 import { useState, useEffect } from 'react';
+import 'animate.css';
 
 function Education() {
+
+    const [visibleAccordion,setVisibleAccordion] = useState(false)
 
     const [visibleIndex, setVisibleIndex] = useState(-1)
     const infoArray = [...info]
@@ -41,7 +44,7 @@ function Education() {
             {
                 infoArray.map((element, index) =>
 
-                    <div key={index} onClick={() => handlerFunction(index)} className={styles.accordion}>
+                    <div key={index} onClick={() => handlerFunction(index)} className={ `${visibleAccordion ? "animate__animated animate__bounce" : null} ${styles.accordion}`}>
 
                         <span className={styles.icon} >{visibleIndex === index ? <IoIosArrowUp /> : <MdKeyboardArrowDown />}</span>
 
