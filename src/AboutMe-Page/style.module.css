@@ -20,7 +20,7 @@
     justify-content: center;
     gap: var(--aboutGap);
     cursor: default;
-    padding: calc(var(--aboutGap) / 2) 0;
+    padding: 2rem 0;
 }
 
 .title {

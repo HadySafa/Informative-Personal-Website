@@ -4,6 +4,37 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color1: #0d1b2a;
+  --color2: #1b263b;
+  --color3: #415a77;
+  --color4: #778da9;
+  --color5: #e0e1dd;
+}
+
 html {
   overflow-x: hidden;
 }
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--color5);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--color4);
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--color1);
+}
+
+body {
+  scrollbar-width: thin; 
+  scrollbar-color: #888 #f1f1f1; /* thumb color and track color */
+}
+

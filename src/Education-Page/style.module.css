@@ -1,5 +1,5 @@
 :root {
-    --accordionWidth: 90%;
+    --accordionWidth: 80%;
     --accordionHeight: 5rem;
     --accordionGap: 2rem;
     --accordionSectionsGap: 1rem;
@@ -12,6 +12,7 @@
 
 /*Page*/
 .page {
+    padding: 2rem 0;
     min-height: 100vh;
     min-width: 100vw;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -23,7 +24,6 @@
     justify-content: center;
     gap: var(--accordionGap);
     cursor: default;
-    padding: 1rem 0;
 }
 
 /*Header*/
@@ -44,10 +44,10 @@
     min-width: var(--accordionWidth);
     max-width: var(--accordionWidth);
     min-height: var(--accordionHeight);
-    border: 2px solid var(--color3);
+    border: 2px solid var(--color4);
     position: relative;
     cursor: pointer;
-    box-shadow: 0 4px 8px var(--color3);
+    box-shadow: 0 4px 8px var(--color4);
     transition: min-height 0.5s ease;
     transition: transform 0.5s ease;
 }

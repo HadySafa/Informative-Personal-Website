@@ -1,7 +1,7 @@
 import styles from './style.module.css'
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
-import { useState, useRef } from 'react'
+import { useState, useRef,useEffect } from 'react'
 import { info } from './info'
 
 
@@ -35,19 +35,28 @@ function Projects() {
                 behavior: 'smooth'
             });
         }
-
     }
+
+    useEffect( () => {
+        function handlerFunction(){
+            projectContainer.current.scrollLeft = index * projectContainer.current.clientWidth;
+        }
+
+        window.addEventListener('resize', handlerFunction);
+
+        return () => window.removeEventListener("resize",handlerFunction)
+    })
 
     return (
         <section className={styles.page}>
 
-            <h2>Projects</h2>
+            <h2 className={styles.title}>Projects</h2>
 
             <div ref={projectContainer} className={styles.mainPageContentContainer}>
                 {
-                    infoArray.map((project, index) =>
+                    infoArray.map((project, i) =>
 
-                        <div key={index} className={styles.project}>
+                        <div key={i} className={styles.project}>
 
                             <h2>{project.title}</h2>
 

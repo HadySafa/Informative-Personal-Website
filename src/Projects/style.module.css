@@ -5,9 +5,21 @@
     --color4: #778da9;
     --color5: #e0e1dd;
     --projectsPageGap: 2rem;
-    --projectsPageWidth: 90vw;
+    --projectsPageWidth: 80vw;
 }
 
+.title {
+    color: var(--color1);
+    font-weight: bold;
+    font-size: clamp(1rem, 4vw, 3rem);
+    border-bottom: 2px solid var(--color1);
+    width: var(--aboutSubsectionWidth);
+    text-align: center;
+    text-transform: capitalize;
+    padding-bottom: calc(var(--aboutGap) / 2);
+    border-bottom: 2px solid var(--color1);
+    letter-spacing: 1.5px;
+}
 
 .page {
     min-height: 100vh;
@@ -18,7 +30,7 @@
     align-items: center;
     justify-content: center;
     gap: var(--projectsPageGap);
-
+    padding: 2rem 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: var(--color1);
     font-size: clamp(1rem, 1.5vw, 2rem);
@@ -34,12 +46,13 @@
     overflow-x: hidden;
     overflow: hidden;
     display: flex;
+    position: relative;
 }
 
 /*Project and Info Styling*/
 .project {
-    min-width: var(--projectsPageWidth);
-    max-width: var(--projectsPageWidth);
+    min-width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,6 +60,7 @@
     padding: var(--projectsPageGap);
     gap: calc(var(--projectsPageGap));
 }
+
 
 .bodyContainer {
     gap: calc(var(--projectsPageGap));

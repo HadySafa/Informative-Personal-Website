@@ -2,7 +2,8 @@ import LandingPage from "./Landing-Page"
 import About from "./AboutMe-Page"
 import Education from "./Education-Page"
 import Projects from "./Projects"
-import Skills from "./Slills-Page"
+import Contact from "./Contact"
+import Header from "./Header"
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <About />
       <Projects />
       <Education />
+      <Contact />
     </>
   )
 
