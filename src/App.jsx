@@ -4,6 +4,8 @@ import Education from "./Education-Page"
 import Projects from "./Projects"
 import Contact from "./Contact"
 import { useState, useEffect, useRef } from 'react'
+import Header from "./Header"
+import { BiUpArrowAlt } from "react-icons/bi";
 
 function App() {
 
@@ -29,23 +31,33 @@ function App() {
 
   }, [scrollIntoViewIndex])
 
+  function scrollToTop(){
+    window.scrollTo({
+      top:0,
+      left:0,
+      behavior:"smooth"
+    })
+  }
+
   return (
     <>
+      <Header setScrollIntoViewIndex={setScrollIntoViewIndex}/>
       <div ref={landingPage}>
-        <Landing key={0} setScrollIntoViewIndex={setScrollIntoViewIndex} />
+        <Landing setScrollIntoViewIndex={setScrollIntoViewIndex} />
       </div>
       <div ref={aboutPage}>
-        <About key={1} />
+        <About/>
       </div>
       <div ref={projectsPage}>
-        <Projects key={2} />
+        <Projects/>
       </div>
       <div ref={educationPage}>
-        <Education key={3} />
+        <Education/>
       </div>
       <div ref={contactPage}>
-        <Contact key={4} />
+        <Contact/>
       </div>
+      <span onClick={scrollToTop} className="scrollToTop"><BiUpArrowAlt /></span>
     </>
   )
 

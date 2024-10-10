@@ -1,0 +1,50 @@
+
+
+.page{
+    background-color: var(--color5);
+    min-width: 100%;
+    min-height: 3rem;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--color1);
+    cursor: default;
+    margin-top: 0.5rem;
+}
+
+.headerItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.75rem,2vw,1rem);
+    color: var(--color1);
+    cursor: pointer;
+    padding: 4px 5px;
+    border-bottom: 3px solid var(--color5);
+    transition: border-color 0.5s ease;
+}
+
+.headerItem:hover{
+    border-color: var(--color1);
+}
+
+
+@media (min-width:700px){
+
+    .page{
+        gap: 1.5rem;
+    }
+
+}
+
+@media (min-width:1025px){
+
+    .page{
+        gap: 4rem;
+    }
+    
+}
